@@ -7,7 +7,7 @@
     <title>Tour of DOM</title>
     <link rel="stylesheet" href="styles/styes.css">
     <style>
-        li {
+        .fruits_container li {
             color: tomato;
         }
         #Fruits_title{
@@ -34,7 +34,7 @@
                 <li>DOM de re baba</li>
             </ul>
         </section>
-        <section>
+        <section class="fruits_container">
             <h1 id="fruits_title">Fruits I like</h1>
             <ul>
                 <li>Apple</li>
@@ -53,6 +53,10 @@
         </section>
     </main>
     <script>
+
+        // option:--1
+        // getElementsByTagName
+
         const liCollection = document.getElementsByTagName('li');
         for (const li of liCollection) {
             // console.log(li.innerText);
@@ -60,6 +64,10 @@
         }
 
         // -------------------------------------
+
+
+        // option:--1
+        // getElementsByTagName
 
         const allHeading = document.getElementsByTagName('h1');
         for (const h1 of allHeading) {
@@ -71,6 +79,8 @@
         // -------------------------------------
 
 
+        // option:--2
+        // getElementById
 
         const fruitsTitle = document.getElementById('fruits_title');
         fruitsTitle.innerText = 'Fruits changed by js'
@@ -78,10 +88,38 @@
 
         // -------------------------------------
 
+
+        // option:--3
+        // getElementByClassName
+
+
         const places = document.getElementsByClassName('important_places');
         // console.log(places);
         for(const place of places){
-            console.log(place.innerText);
+            // console.log(place.innerText);
+        }
+
+        // ----------------------------------------
+
+
+        // option:--4
+        // querySelector
+        
+        const h1 = document.querySelector('#fruits_title');
+        console.log(h1);
+
+
+
+
+        // -----------------------------------------
+
+        // option:--5;
+        // querySelectorAll
+
+        const someLi = document.querySelectorAll('.fruits_container li');
+        // console.log(someLi);
+        for(const li of someLi){
+            console.log(li.innerText);
         }
 
     </script>
